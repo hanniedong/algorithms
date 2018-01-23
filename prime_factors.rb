@@ -10,10 +10,6 @@ def prime_factors(number)
       prime_factors << counter 
       number /= counter 
     end 
-    if number / counter == 1 
-      prime_factors << counter
-      number /= counter
-    end 
     counter += 1 
   end 
   prime_factors
