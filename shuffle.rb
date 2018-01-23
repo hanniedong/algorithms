@@ -1,9 +1,13 @@
 def shuffle(array)
   counter = 0 
+  shuffled_array = Array.new
+  shuffled_array += array 
   until counter == array.length - 1
     random_counter = rand(counter)
-    array[counter], array[random_counter] = array[random_counter], array[counter]
+    shuffled_array[counter], shuffled_array[random_counter] = shuffled_array[random_counter], shuffled_array[counter]
     counter += 1
   end 
-  array
+  shuffled_array
 end 
+
+shuffle([1,2,3,4])
