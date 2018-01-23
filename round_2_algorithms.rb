@@ -22,3 +22,22 @@ def linear_search(n, numbers)
   end 
   nil 
 end 
+
+def global (n, array)
+  counter = 1
+  positions_array = []
+  until counter == array.length 
+    if n == array[counter]
+      positions_array << counter
+    end 
+      counter += 1
+  end 
+  positions_array
+end 
+
+letters = "bananas".chars
+global_linear_search("s", letters)
+
+def binary_search
+  if midpoint == n 
+end 
