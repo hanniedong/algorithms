@@ -13,3 +13,12 @@ def fibonacci_recursive(n)
   return 1 if n == 2 
   fibonacci_recursive(n - 1) + fibonacci_recursive(n - 2)
 end 
+
+def linear_search(n, numbers)
+  numbers.each do |number|
+    if number == n 
+      return numbers.index(number)
+    end
+  end 
+  nil 
+end 
