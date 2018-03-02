@@ -26,6 +26,24 @@ class LinkedList{
     console.log(string)
   }
   
+  
+  addAt(data, element){
+    let current = this.head;
+    while(current) {
+      if(current.data === element) {
+        let node = new Node(data);
+        if(current === this.tail) {
+          this.tail.next = node;
+          this.tail = node;
+        } else {
+          node.next = current.next;
+          current.next = node;
+        }
+      this.count++;
+      }
+      current = current.next;
+    }
+  }
   addLast(data){
     let node = new Node(data);
     if(this.count === 0 ){
