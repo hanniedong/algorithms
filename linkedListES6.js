@@ -1,6 +1,12 @@
+class Node {
+  constructor(data){
+    this.data= data;
+    this.next= null;
+  }
+}
+
 class LinkedList{
   constructor(){
-    this.length = 0;
     this.head = null;
     this.tail = null;
     this.count = 0;
@@ -10,12 +16,18 @@ class LinkedList{
     return this.count;
   }
 
-  addLast(data){
-    const node = {
-      data: data,
-      next: null
+  printItems(){
+    let string = '';
+    let current = this.head;
+    while (current <= this.tail){
+      string += current.data;
+      current = current.next;
     }
-    
+    console.log(string)
+  }
+  
+  addLast(data){
+    let node = new Node(data);
     if(this.count === 0 ){
       this.head = node;
     }else{
@@ -26,10 +38,7 @@ class LinkedList{
   }
 
   addFirst(data){
-    const node = {
-      data: data;
-      next: null
-    }
+    let node = new Node(data);
 
     const temp = this.head;
     this.head = node;
@@ -66,4 +75,11 @@ class LinkedList{
     }
   }
 }
+
+let list = new LinkedList();
+list.length;
+list.addFirst(5)
+list.addLast(3)
+list.length;
+list.printItems();
 
