@@ -26,6 +26,17 @@ class LinkedList{
     console.log(string)
   }
   
+  find(data){
+    let currentNode = this.head;
+    while(currentNode !== this.tail){
+      if(currentNode.data === data){
+        return true;
+      }else{
+        currentNode = currentNode.next;
+      }
+    }
+    return false;
+  }
   
   addAt(data, element){
     let current = this.head;
@@ -81,7 +92,7 @@ class LinkedList{
     }
     this.count--; 
   }
-  
+
   removeFirst(){
     if(this.count > 0){
       this.head = this.head.next;
