@@ -67,6 +67,21 @@ class LinkedList{
     }
   }
 
+  remove(data){
+    let currentNode = this.head;
+    let previousNode;
+    if(currentNode.data === data){
+      this.head = currentNode.next;
+    }else{
+      while(currentNode.data !== data){
+        previousNode = currentNode;
+        currentNode = currentNode.next;
+      }
+      previousNode.next = currentNode.next;
+    }
+    this.count--; 
+  }
+  
   removeFirst(){
     if(this.count > 0){
       this.head = this.head.next;
