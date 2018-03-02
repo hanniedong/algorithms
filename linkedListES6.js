@@ -38,6 +38,17 @@ class LinkedList{
     return false;
   }
   
+  returnKthToLast(position){
+    let currentNode = this.head;
+    let index = this.length - position
+    let count = 0
+    while(count < index){
+      count ++ ;
+      currentNode = currentNode.next
+    }
+    return currentNode.data;
+  }
+  
   addAt(data, element){
     let current = this.head;
     while(current) {
