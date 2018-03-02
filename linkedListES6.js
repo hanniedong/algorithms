@@ -26,6 +26,20 @@ class LinkedList{
     console.log(string)
   }
   
+  palindrome(){
+    let string = '';
+    let current = this.head;
+    while (current <= this.tail){
+      string += current.data;
+      current = current.next;
+    }
+    let middle = Math.ceil(string.length / 2);
+    let stringOne = string.slice(0, middle);
+    let stringTwo = string.slice(middle, string.length).split('').reverse().join('');
+    return stringOne === stringTwo
+  }
+  
+  
   find(data){
     let currentNode = this.head;
     while(currentNode !== this.tail){
@@ -54,7 +68,7 @@ class LinkedList{
     }
     console.log(hash)
   }
-  
+
   returnKthToLast(position){
     let currentNode = this.head;
     let index = this.length - position
