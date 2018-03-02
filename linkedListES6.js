@@ -38,6 +38,23 @@ class LinkedList{
     return false;
   }
   
+  removeDups(){
+    let hash = {};
+    let previousNode = this.head;
+    let currentNode = this.head.next;
+    while(currentNode !== null){
+      if(!hash[currentNode.data] ){
+        hash[currentNode.data] = true;
+      }else{
+        previousNode.next = currentNode.next;
+        this.count --
+      }
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
+    console.log(hash)
+  }
+  
   returnKthToLast(position){
     let currentNode = this.head;
     let index = this.length - position
@@ -48,7 +65,7 @@ class LinkedList{
     }
     return currentNode.data;
   }
-  
+
   addAt(data, element){
     let current = this.head;
     while(current) {
