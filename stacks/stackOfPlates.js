@@ -1,64 +1,42 @@
-class stackOfPlates{
-  constructor(){
-    this.count = 0;
-    this.capacity = 4;
+class setOfStacks{
+  constructor(capacity){
+    this.capacity = capacity;
+    this.stacks = [[]]
   }
   
   push(item){
-    if (this.count === this.capacity || this.count === 0){
-      this.count = 0;
-      let stack = new Stack();
-      
+    if(this.stacks[this.stacks.length - 1].length >= this.capacity){
+      this.stacks.push([])
     }
-
+    this.stacks[this.stacks.length - 1].push(value)  
   }
   
   pop(){
-    if(this.count >0){
-      this.count--
+    if (this.stacks.length && this.stacks[this.stacks.length - 1].length ===0){
+      this.stacks.pop();
     }
-    return this.items.pop();
+    return this.stacks[this.stacks.length - 1].length.pop();
   }
   
-  peek(){
-    return this.items[this.count -1];
-  }
-}
+  popAt(stackNum){
+    let stack = this.stacks[stackNum - 1 ]
+    let value = this.stacks[stackNum].pop();
+    let nextStack;
+    const tempStack = [];
 
-class Stack{
-  constructor(){
-    this.items = [];
-    this.count = 0;
-    this.min = [];
-  }
-  
-  getMin(){
-    return this.min[this.min.length - 1];
-  }
-  
-  getLength(){
-    return this.count;
-  }
-  
-  push(item){
-    let min = this.getMin();
-    this.items.push(item);
-    this.count++
-    
-    if (min === undefined || min >= item){
-      this.min.push(item);
+    if(stackNum < this.stacks.length){
+      for(let i = stacksNum; i < this.stacks.length; i++){
+        nextStack = this.stacks[i];
+        while (nextStack.length){
+          tempStack.push(nextStack.pop());
+        }
+        stack.push(tempStack.pop());
+      }
+      stack = nextStack;
     }
-
-  }
-  
-  pop(){
-    if(this.count >0){
-      this.count--
+    if (this.stacks.length > 1 && this.stacks[this.stacks.length-1].length === 0) {
+      this.stacks.pop();
     }
-    return this.items.pop();
-  }
-  
-  peek(){
-    return this.items[this.count -1];
+    return value;
   }
 }
