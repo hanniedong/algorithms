@@ -72,7 +72,7 @@ function LinkedList(){
 
   this.addAt = function(index, element){
     let node = new Node(element);
-    let currentnNode = head;
+    let currentNode = head;
     let previousNode;
     let currentIndex = 0;
 
