@@ -2,6 +2,11 @@ class Stack{
   constructor(){
     this.items = [];
     this.count = 0;
+    this.min = [];
+  }
+  
+  getMin(){
+    return this.min[this.min.length - 1];
   }
   
   getLength(){
@@ -9,8 +14,14 @@ class Stack{
   }
   
   push(item){
+    let min = this.getMin();
     this.items.push(item);
     this.count++
+    
+    if (min === undefined || min >= item){
+      this.min.push(item);
+    }
+
   }
   
   pop(){
