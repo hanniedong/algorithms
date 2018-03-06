@@ -25,13 +25,13 @@ class MinHeap{
     }
   }
 
-  remove(){
+  this.remove = function() {
     let smallest = heap[1];
     if (heap.length > 2) {
       heap[1] = heap[heap.length - 1];
       heap.splice(heap.length - 1);
       if (heap.length == 3) {
-        if (heap[1] < heap[2]) {
+        if (heap[1] > heap[2]) {
           [heap[1], heap[2]] = [heap[2], heap[1]];
         };
         return smallest;
@@ -39,8 +39,8 @@ class MinHeap{
       let i = 1;
       let left = 2 * i;
       let right = 2 * i + 1;
-      while (heap[i] <= heap[left] || heap[i] <= heap[right]) {
-        if (heap[left] > heap[right]) {
+      while (heap[i] >= heap[left] || heap[i] >= heap[right]) {
+        if (heap[left] < heap[right]) {
           [heap[i], heap[left]] = [heap[left], heap[i]];
           i = 2 * i
         } else {
@@ -59,5 +59,13 @@ class MinHeap{
       return null;
     };
     return smallest;
+  };
+  
+  this.sort = function() {
+    let result = new Array();
+    while (heap.length > 1) {
+      result.push(this.remove());
+    };
+    return result;
   };
 }
