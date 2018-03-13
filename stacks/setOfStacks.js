@@ -6,6 +6,6 @@ class SetOfStacks{
   };
 
   push(item){
-    if(this.stack === 
+    if(this.stack === ç
   }
 }
