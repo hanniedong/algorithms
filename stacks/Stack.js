@@ -5,6 +5,10 @@ class Stack{
     this.min = [];
   }
   
+  isEmpty(){
+    this.count === 0;
+  }
+  
   getMin(){
     return this.min[this.min.length - 1];
   }
