@@ -1,10 +1,10 @@
 const quickySort = array => {
     if (array.length === 0) return [];
-    let [x, ...xs] = array; 
+    let [pivot, ...elements] = array; 
     return [
-        ...quickySort(xs.filter(y => y < x)),
-        x,
-        ...quickySort(xs.filter(y => y >= x))
+        ...quickySort(elements.filter(y => y < pivot)),
+        pivot,
+        ...quickySort(elements.filter(y => y >= pivot))
     ];
 };
 let array = [1,7,2,4]
