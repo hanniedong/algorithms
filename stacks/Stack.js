@@ -16,6 +16,11 @@ class Stack{
   getLength(){
     return this.count;
   }
+
+  reverse(string){
+    let string = "";
+    let stack = new Stack;
+  }
   
   push(item){
     let min = this.getMin();
