@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<p>These are our demo pages</p>
+<div id="demo"></div>    
+<script>
+    (function() {
+        var cycle = ['demo1.html','demo2.html','demo3.html','demo4.html'];
+        var active = 0;
+        var iframe = document.createElement('iframe');
+        iframe.frameBorder=0;
+        iframe.width="600px";
+        iframe.height="300px";
+
+        function slideFrame() {
+ 
+            active = (active == cycle.length-1)?0:active+1;
+        }
+        slideFrame();
+
+    })();
+</script>
+</html>
