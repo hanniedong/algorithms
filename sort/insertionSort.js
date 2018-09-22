@@ -5,6 +5,8 @@
 //loop backwards while index >=0 and current element > temp variable
 //set next element equal to current element
 //set next element equal to temp
+//O(1) space
+
 const insertionSort = array => {
   let length = array.length;
   for (let i = 1; i < length; i++) {
