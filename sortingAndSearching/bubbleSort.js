@@ -1,13 +1,13 @@
-function bubbleSort(array){
-
-  for(i = 0; i < array.length; i++){
-    for(j = 0; j < array.length - i - 1; j++){
-      if(array[j] > array[j + 1]){
-        [array[j], array[j + 1]] = [array[j + 1], array[j]]
+function bubbleSort(array) {
+  const length = array.length;
+  for (i = 0; i < length; i++) {
+    for (j = 0; j < length - 1 - i; j++) {
+      if (array[j] > array[j + 1]) {
+        [array[j], array[j + 1]] = [array[j + 1], array[j]];
       }
     }
   }
-  return array
+  return array;
 }
 
-bubbleSort([12, 1,12,5,6,78,12,45])
+bubbleSort([12, 1, 12, 5, 6, 78, 12, 45]);
