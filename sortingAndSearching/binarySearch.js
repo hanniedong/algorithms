@@ -1,18 +1,25 @@
-function binarySearch(array, value, minIndex = 0, maxIndex = array.length - 1){
-  let currentIndex;
-  currentIndex = Math.floor((minIndex + maxIndex) / 2);
+const binarySearch = (array, value) => {
+  return binarySearchHelper(
+    array,
+    value,
+    (minValue = 0),
+    (maxValue = array.length - 1)
+  );
+};
 
-  if(array[currentIndex] === value){
-    console.log(currentIndex);
-    return;
+const binarySearchHelper = (array, value, minValue, maxValue) => {
+  let midpoint = Math.floor(minValue + maxValue / 2);
+  if (array[midpoint] === value) {
+    return midpoint;
   }
-  if(value > array[currentIndex]){
-    minIndex = currentIndex + 1;
+  if (array[midpoint] < value) {
+    minValue = midpoint;
   }
-  if(value < array[currentIndex]){
-    maxIndex = currentIndex - 1;
+  if (array[midpoint] > value) {
+    maxValue = midpoint;
   }
-  binarySearch(array, value, minIndex, maxIndex)
-}
 
-binarySearch([1,2,3,4,5,6,7], 2)
+  binarySearchHelper(array, value, minValue, maxValue);
+};
+
+binarySearch([1, 3, 5, 6, 8, 9], 5);
