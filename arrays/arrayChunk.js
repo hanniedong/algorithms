@@ -8,3 +8,12 @@ function chunk(array, size) {
   }
   return chunkArray;
 }
+
+const chunk = (array, size) => {
+  const chunkArray = [];
+  for (let i = 0; i < array.length; i += size) {
+    const subArray = array.slice(i, i + size);
+    chunkArray.push(subArray);
+  }
+  return chunkArray;
+};

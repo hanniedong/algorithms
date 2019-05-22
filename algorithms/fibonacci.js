@@ -1,22 +1,23 @@
-function fibonacci(number){
-  let a = 0;
+const fibonacci = number => {
+  if (number === 1) return 0;
+  if (number === 2) return 1;
   let b = 1;
-  let temp;
-  
-  while(number > 2){
-    temp = b;
+  let a = 0;
+  while (number > 2) {
+    let temp = b;
     b = b + a;
     a = temp;
-    number--
+    number--;
   }
   return b;
-}
+};
 
-function fibonacciRecursive(number){
-  if(number === 1) return 0;
-  if(number === 2) return 1;
-  return fibonacciRecursive(number - 1) + fibonacciRecursive(number - 1)
-}
+console.log(fibonacci(5));
 
-console.log(fibonacciRecursive(3))
-console.log(fibonacci(6))
+const fibonacciRecursive = number => {
+  if (number === 1) return 0;
+  if (number === 2) return 1;
+  return fibonacciRecursive(number - 1) + fibonacciRecursive(number - 2);
+};
+
+console.log(fibonacciRecursive(5));

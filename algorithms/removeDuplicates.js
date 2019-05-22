@@ -1,12 +1,8 @@
-function removeDuplicates(array){
-  let j = 0;
-  for(let i = 0; i < array.length; i++)
-    if(array[j] !== array[i]){
-      j++
-      array[j] = array[i]
-    }
-  return j + 1
-}
-
-console.log(removeDuplicates([1,1,1,2]))
-
+//input: array
+//use a Set
+const removeDuplicates = array => {
+  const numberSet = new Set();
+  array.forEach(number => numberSet.add(number));
+  return numberSet;
+};
+console.log(removeDuplicates([1, 1, 1, 2]));
